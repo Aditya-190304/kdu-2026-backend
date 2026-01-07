@@ -30,7 +30,7 @@ public class AsyncParallelDemo {
 
         executor.shutdown();
 
-        int size = 1_000_000;
+        int size = 1000000;
         List<Integer> numbers = new ArrayList<>();
         for (int i = 1; i <= size; i++) {
             numbers.add(i);
