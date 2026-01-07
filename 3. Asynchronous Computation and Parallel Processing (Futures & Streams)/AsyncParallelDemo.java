@@ -20,10 +20,10 @@ public class AsyncParallelDemo {
         
         ExecutorService executor = Executors.newSingleThreadExecutor();
 
-        System.out.println("Submitting Callable task...");
+        
         Future<Integer> future = executor.submit(sumTask);
 
-        System.out.println("Waiting for result (blocking)...");
+        
         
         int result = future.get();
         System.out.println("Sum from 1 to " + N + " = " + result);
