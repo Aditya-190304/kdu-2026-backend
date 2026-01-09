@@ -16,17 +16,21 @@ public class UserService {
     public UserService(PasswordEncoder passwordEncoder) {
         this.passwordEncoder = passwordEncoder;
 
-        // Preload users with encoded passwords
+        
         users.add(new User("basicUser", passwordEncoder.encode("password123"), "basic@example.com", List.of("ROLE_BASIC")));
         users.add(new User("adminUser", passwordEncoder.encode("admin123"), "admin@example.com", List.of("ROLE_ADMIN")));
     }
 
+    
     public List<User> getAllUsers() {
         return users;
     }
 
+    
     public void addUser(User user) {
+    
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+
         users.add(user);
     }
 }
