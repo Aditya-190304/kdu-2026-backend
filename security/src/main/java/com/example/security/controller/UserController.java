@@ -19,6 +19,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    
     @GetMapping
     @PreAuthorize("hasAnyRole('BASIC','ADMIN')")
     public List<User> getUsers() {
@@ -26,11 +27,12 @@ public class UserController {
         return userService.getAllUsers();
     }
 
+    
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")
     public String addUser(@RequestBody User user) {
         userService.addUser(user);
-        logger.info("New user added: " + user.getUserName());
+        logger.info("New user added: {}", user.getUserName());
         return "User added successfully!";
     }
 }
