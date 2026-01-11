@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: digital-bookshelf
+  jackson:
+    default-property-inclusion: non_null
+
+app:
+  async:
+    pool-size: 3
+    task-queue: 100
+  # NEW: Secrets are now configurable here (or via Environment Variables)
+  security:
+    librarian-password: pass1
+    member-password: pass2
+    admin-password: pass3
